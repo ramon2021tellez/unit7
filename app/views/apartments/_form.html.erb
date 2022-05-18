@@ -18,7 +18,7 @@
 
   <div>
     <%= form.label :building_id, style: "display: block" %>
-    <%= form.text_field :building_id %>
+    <%= collection_select(:apartment, :building_id, Building.all, :id, :name) %>
   </div>
 
   <div>
