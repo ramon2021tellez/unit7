@@ -15,7 +15,14 @@
     <%= form.label :number, style: "display: block" %>
     <%= form.number_field :number %>
   </div>
-
+<p>Apartment fields</p>
+  
+  <%= form.fields_for :apartments do |apartment_form| %>
+    <%= apartment_form.label :number %>
+    <%= apartment_form.text_field :number %>
+    <%= apartment_form.label :sale_price %>
+    <%= apartment_form.text_field :sale_price %>
+  <% end %>
   <div>
     <%= form.label :building_id, style: "display: block" %>
     <%= collection_select(:apartment, :building_id, Building.all, :id, :name) %>
